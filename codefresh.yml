@@ -26,20 +26,28 @@ steps:
         only:
           - master
     registry: dockerhub
+  
+  deploy:
+  image: codefresh/cfstep-helm:2.9.0
+  environment:
+    - CHART_REF=mychart
+    - RELEASE_NAME=mychart-prod
+    - KUBE_CONTEXT=cluster-1@codefresh-staging
 
-  RunningDeployScript:
-    title: Running Deploy Script
-    type: deploy
-    kind: kubernetes
-    # k8s cluster name
-    cluster: cluster-1@codefresh-staging
-    namespace: default
-    when:
-      branch:
-        only:
-          - master
-    # service name
-    service: helm-test
-    candidate:
-      image: '${{BuildingDockerImage}}'
-      registry: dockerhub
+
+  # RunningDeployScript:
+  #   title: Running Deploy Script
+  #   type: deploy
+  #   kind: kubernetes
+  #   # k8s cluster name
+  #   cluster: cluster-1@codefresh-staging
+  #   namespace: default
+  #   when:
+  #     branch:
+  #       only:
+  #         - master
+  #   # service name
+  #   service: helm-test
+  #   candidate:
+  #     image: '${{BuildingDockerImage}}'
+  #     registry: dockerhub
