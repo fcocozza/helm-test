@@ -28,11 +28,11 @@ steps:
     registry: dockerhub
   
   deploy:
-  image: codefresh/cfstep-helm:2.9.0
-  environment:
-    - CHART_REF=mychart
-    - RELEASE_NAME=mychart-prod
-    - KUBE_CONTEXT=cluster-1@codefresh-staging
+    image: codefresh/cfstep-helm:2.9.0
+    environment:
+      - CHART_REF=mychart
+      - RELEASE_NAME=mychart-prod
+      - KUBE_CONTEXT=cluster-1@codefresh-staging
 
 
   # RunningDeployScript:
