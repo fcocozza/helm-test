@@ -1,0 +1,45 @@
+version: '1.0'
+steps:
+  BuildingDockerImage:
+    title: Building Docker Image
+    type: build
+    # The name of the image
+    image_name: fcocozza/helm-test
+    working_directory: ./
+    dockerfile: Dockerfile
+    tag: '${{CF_BRANCH_TAG_NORMALIZED}}'
+
+  PushingToDockerRegistry:
+    title: Pushing to Docker Registry
+    type: push
+    candidate: '${{BuildingDockerImage}}'
+    tag: '${{CF_BRANCH_TAG_NORMALIZED}}'
+    registry: dockerhub
+
+  PushingToDockerRegistryLatestTag:
+    title: Pushing to Docker Registry - Latest tag
+    type: push
+    candidate: '${{BuildingDockerImage}}'
+    tag: 'latest'
+    when:
+      branch:
+        only:
+          - master
+    registry: dockerhub
+
+  RunningDeployScript:
+    title: Running Deploy Script
+    type: deploy
+    kind: kubernetes
+    # k8s cluster name
+    cluster: cluster-1@codefresh-staging
+    namespace: default
+    when:
+      branch:
+        only:
+          - master
+    # service name
+    service: helm-test
+    candidate:
+      image: '${{BuildingDockerImage}}'
+      registry: dockerhub
