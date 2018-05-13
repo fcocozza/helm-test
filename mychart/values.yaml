@@ -7,7 +7,6 @@ replicaCount: 1
 image:
   repository: fcocozza/helm-test
   tag: master
-  pullPolicy: IfNotPresent
 
 service:
   type: ClusterIP
