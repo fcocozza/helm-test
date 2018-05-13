@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: fcocozza/helm-test
-  tag: latest
+  tag: master
   pullPolicy: IfNotPresent
 
 service:
