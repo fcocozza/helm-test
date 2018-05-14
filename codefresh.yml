@@ -34,6 +34,7 @@ steps:
       - RELEASE_NAME=mychart-prod
       - KUBE_CONTEXT=cluster-1@codefresh-staging
       - VALUE_service_type=LoadBalancer
+      - CMD_PS_recreate-pods
 
 
   # RunningDeployScript:
