@@ -9,6 +9,16 @@ steps:
     dockerfile: Dockerfile
     tag: '${{CF_BRANCH_TAG_NORMALIZED}}'
 
+  step_name:
+    title: Step Title
+    description: Step description
+    image: codefresh/cfstep-helm:2.9.0
+    working_directory: ${{IMAGE_WORK_DIR}}
+    commands:
+      - ls
+      - date
+      - echo "${{IMAGE_WORK_DIR}}"
+
   PushingToDockerRegistry:
     title: Pushing to Docker Registry
     type: push
