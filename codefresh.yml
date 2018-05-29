@@ -13,11 +13,11 @@ steps:
     title: Step Title
     description: Step description
     image: codefresh/cfstep-helm:2.9.0
-    working_directory: ${{IMAGE_WORK_DIR}}
+    working_directory: IMAGE_WORK_DIR
     commands:
       - ls
       - date
-      - echo "${{IMAGE_WORK_DIR}}"
+      - echo "$IMAGE_WORK_DIR"
 
   PushingToDockerRegistry:
     title: Pushing to Docker Registry
