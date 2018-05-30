@@ -4,7 +4,7 @@ steps:
     type: git-clone
     title: git_clone_custom
     description: Step description
-    working_directory: ${{main_clone}}
+    working_directory: ${{CF_VOLUME_PATH}}
     repo: https://github.com/fcocozza/demo_express_app
     
   ls_volume:
