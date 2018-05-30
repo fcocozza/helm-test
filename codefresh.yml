@@ -2,10 +2,21 @@ version: '1.0'
 steps:
   git_clone_custom:
     type: git-clone
-    title: Step Title
+    title: git_clone_custom
     description: Step description
     working_directory: ${{main_clone}}
     repo: https://github.com/fcocozza/demo_express_app
+    
+  ls_volume:
+    title: ls_volume
+    description: Step description
+    image: alpine
+    working_directory: ${{step_id}}
+    commands: 
+      - ls ${{CF_VOLUME_NAME}}
+      - ls ${{CF_VOLUME_PATH}}
+      - ls ${{CF_VOLUME}}
+      - date
 
   BuildingDockerImage:
     title: Building Docker Image
