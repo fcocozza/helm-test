@@ -13,6 +13,7 @@ steps:
     image: alpine
     commands:
       - date
+      - echo "${{CF_VOLUME_PATH}}"
       - date
 
   BuildingDockerImage:
