@@ -1,5 +1,12 @@
 version: '1.0'
 steps:
+git_clone_custom:
+  type: git-clone
+  title: Step Title
+  description: Step description
+  working_directory: ${{main_clone}}
+  repo: https://github.com/fcocozza/demo_express_app
+
   BuildingDockerImage:
     title: Building Docker Image
     type: build
