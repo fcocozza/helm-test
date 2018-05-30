@@ -4,7 +4,6 @@ steps:
     type: git-clone
     title: git_clone_custom
     description: Step description
-    working_directory: ${{CF_VOLUME_PATH}}
     repo: https://github.com/fcocozza/demo_express_app
     
   ls_volume:
@@ -14,6 +13,7 @@ steps:
     commands:
       - date
       - echo "${{CF_VOLUME_PATH}}"
+      - ls -alh ${{CF_VOLUME_PATH}}/helm-test
       - ls -alh ${{CF_VOLUME_PATH}}
       - date
 
