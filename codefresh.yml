@@ -14,6 +14,7 @@ steps:
     commands:
       - date
       - echo "${{CF_VOLUME_PATH}}"
+      - ls -alh ${{CF_VOLUME_PATH}}
       - date
 
   BuildingDockerImage:
