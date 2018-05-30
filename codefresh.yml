@@ -11,10 +11,11 @@ steps:
     title: ls_volume
     description: Step description
     image: alpine
-    commands: 
-      - ls ${{CF_VOLUME_NAME}}
-      - ls ${{CF_VOLUME_PATH}}
-      - ls ${{CF_VOLUME}}
+    commands:
+      - date
+      - echo ${{CF_VOLUME_NAME}}
+      - echo ${{CF_VOLUME_PATH}}
+      - echo ${{CF_VOLUME}}
       - date
 
   BuildingDockerImage:
