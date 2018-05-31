@@ -15,6 +15,7 @@ steps:
       - echo "${{CF_VOLUME_PATH}}"
       - ls -alh ${{CF_VOLUME_PATH}}/helm-test
       - ls -alh ${{CF_VOLUME_PATH}}
+      - echo "${{my_secret_var}}"
       - date
 
   BuildingDockerImage:
