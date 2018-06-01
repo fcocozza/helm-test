@@ -11,10 +11,9 @@ steps:
     description: Step description
     image: node:6.12.3-wheezy
     commands:
-      - date
-      - git
+      - echo "date: " date
       - git --version
-      - date
+      - echo "date: " date
     
   ls_volume:
     title: ls_volume
