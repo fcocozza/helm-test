@@ -6,7 +6,7 @@ steps:
     description: Step description
     repo: https://github.com/fcocozza/demo_express_app
   
-  ls_volume:
+  git_command_node:
     title: git command - node wheezy
     description: Step description
     image: node:6.12.3-wheezy
