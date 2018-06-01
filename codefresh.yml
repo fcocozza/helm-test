@@ -7,7 +7,7 @@ steps:
     repo: https://github.com/fcocozza/demo_express_app
   
   git_command_node:
-    title: git command - node wheezy
+    title: git - node:6.12.3-wheezy
     description: Step description
     image: node:6.12.3-wheezy
     commands:
@@ -15,7 +15,7 @@ steps:
       - git --version
       
   git_command_klickinc:
-    title: git command - node wheezy
+    title: git - klickinc/aws-cli-docker:1.2.0
     description: Step description
     image: klickinc/aws-cli-docker:1.2.0
     commands:
