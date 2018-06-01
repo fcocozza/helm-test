@@ -13,7 +13,7 @@ steps:
     commands:
       - date
       - git
-      - git -v
+      - git --version
       - date
     
   ls_volume:
