@@ -5,6 +5,16 @@ steps:
     title: git_clone_custom
     description: Step description
     repo: https://github.com/fcocozza/demo_express_app
+  
+  ls_volume:
+    title: git command - node wheezy
+    description: Step description
+    image: node:6.12.3-wheezy
+    commands:
+      - date
+      - git
+      - git -v
+      - date
     
   ls_volume:
     title: ls_volume
