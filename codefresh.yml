@@ -11,10 +11,16 @@ steps:
     description: Step description
     image: node:6.12.3-wheezy
     commands:
-      - echo "timestamp " $date
       - echo "git --version = "
       - git --version
-      - echo "timestamp " $date
+      
+  git_command_klickinc:
+    title: git command - node wheezy
+    description: Step description
+    image: klickinc/aws-cli-docker:1.2.0
+    commands:
+      - echo "git --version = "
+      - git --version
     
   ls_volume:
     title: ls_volume
